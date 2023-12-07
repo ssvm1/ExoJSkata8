@@ -12,6 +12,12 @@
 
 // CODE ICI
 
+const sumEx1 = (a, b) => {
+   return (a * b) * 2;
+    }
+
+    console.log("Exo1",sumEx1(2,3));
+
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 2
 
@@ -22,6 +28,13 @@
 // console.log(monTableau[0]) // 1
 
 // CODE ICI
+
+let monTableau = [1, 2, 3]
+
+let firstArray = (array) => array[0];
+
+console.log("Exo2",firstArray(monTableau));
+
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 3
@@ -34,6 +47,12 @@
 // console.log(monTableau) // [1, 2]
 
 // CODE ICI
+
+let popArray = (array) => array.pop();
+let popTableau = popArray(monTableau);
+
+console.log("Exo3",monTableau);
+ 
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 4
@@ -48,6 +67,13 @@
 
 // CODE ICI
 
+let sumTableau = 0;
+
+for (let i = 0; i < monTableau.length; i++) {
+    sumTableau += monTableau[i];
+}
+
+console.log("Exo4",sumTableau)
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 5
@@ -63,6 +89,17 @@
 
 // CODE ICI
 
+const reverseString = (string) => {
+    const splitString = string.split('');
+    const reverseArray = splitString.reverse();
+    return reverseArray.join('');
+};
+
+let helloString = "Hello";
+console.log("Exo5",reverseString(helloString));
+
+
+
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 6
@@ -74,6 +111,14 @@
 
 // CODE ICI
 
+const newArray = [1, 2, 3, 4, 20]
+
+const maxArray = (array) => {
+    maxNumber = Math.max(...array);
+    return maxNumber;
+}
+
+console.log("Exo6",maxArray(newArray));
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 7
@@ -85,6 +130,11 @@
 
 // CODE ICI
 
+const minArray = (array) => {
+    minNumber = Math.min(...array);
+    return minNumber;
+}
+console.log("Exo7",minArray(newArray));
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 8
@@ -100,6 +150,14 @@
 // })
 
 // CODE ICI
+const filterString = (string) => {
+    const stringArray = string.split('');
+    const filterArray = stringArray.filter(char => !"aeiou".includes(char.toLowerCase()));
+    return filterArray.join('');
+}
+
+const myString = "Hello";
+console.log("Exo8",filterString(myString));
 
 //----------------------------------------------------------------------------------------------//
 
@@ -113,6 +171,14 @@
 
 // CODE ICI
 
+const sortThisTab = [2, 1, 27, 6, 8, 7]
+
+const sortedArray = (array) => {
+    const sortTab= array.sort((a, b) => a - b);
+    return sortTab;
+}
+console.log("Exo9", sortedArray(sortThisTab));
+
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 10
@@ -123,12 +189,27 @@
 // const maString = "Hello"
 // const monTableau = []
 // for (let i = 0; i < maString.length; i++) {
-//   const maStringRotate = maString.substring(i) + maString.substring(0, i)
+//   const splitThisString = maString.substring(i) + maString.substring(0, i)
 //   monTableau.push(maStringRotate)
 // }
 // console.log(monTableau) // ["Hello", "elloH", "lloHe", "loHel", "oHell"]
 
 // CODE ICI
+
+const exampleString = "Hello";
+
+
+const thisString = (inputString) => {
+    const exampleArray = [];
+    for (let i = 0; i < inputString.length; i++) {
+        const stringRotate = inputString.substring(i) + inputString.substring(0, i);
+        exampleArray.push(stringRotate);
+    }
+    return exampleArray;
+};
+
+const resultArray = thisString(exampleString);
+console.log("exo10", resultArray);
 
 //----------------------------------------------------------------------------------------------//
 
@@ -144,6 +225,17 @@
 
 // CODE ICI
 
+const exArray = [1, 2, 3];
+
+const sumArray = (array) => {
+    return array.map((x) => x + 1)
+}
+
+console.log("exo11", sumArray(exArray));
+
+
+
+
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 12
@@ -157,6 +249,14 @@
 // })
 
 // CODE ICI
+
+const arraySpanishStrings = ["Hola", "Chicos", "Bienvenidos"]
+
+const arrayLength = (array) => {
+    return array.map((x) => x.length)
+}
+
+console.log("exo12", arrayLength(arraySpanishStrings));
 
 //----------------------------------------------------------------------------------------------//
 
@@ -173,6 +273,14 @@
 
 // CODE ICI
 
+const firstStrings = ["Hola", "Chicos", "Bienvenidos"]
+
+const firstLength = (array) => {
+    return array.map((x) => x.charAt(0))
+}
+
+console.log("exo13", firstLength(firstStrings));
+
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 14
@@ -184,6 +292,13 @@
 
 // CODE ICI
 
+const lastStrings = ["Hola", "Chicos", "Bienvenidos"]
+
+const lastLength = (array) => {
+    return array.map((x) => x.charAt(x.length-1))
+}
+
+console.log("exo14", lastLength(lastStrings));
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 15
@@ -193,6 +308,15 @@
 // Pour cette exercice on va utiliser la méthode filter() qui permet de filtrer un tableau, hésitez pas à regarder l'exercice 8 pour voir comment ça fonctionne. Sauf qu'ici on va filtrer en fonction de la longueur de la string. Incice : la méthode length() permet de récupérer la longueur d'une string.
 
 // CODE ICI
+
+const fiveCharStrings = ["Hola", "Chicos", "Bienvenidos", "Leo Pessi"]
+
+const fiveLength = (array) => {
+    const fiveMax = array.filter((word) => word.length > 5)
+    return fiveMax;
+}
+
+console.log("exo15", fiveLength(fiveCharStrings));
 
 //----------------------------------------------------------------------------------------------//
 
@@ -208,6 +332,16 @@
 
 // CODE ICI
 
+
+const numberStrings = ["2", "6", "1", "1"]
+
+const sumNumbers = (array) => {
+    const initialValue = 0;
+    const sumArray = array.reduce((accumulator, currentValue) => accumulator + parseInt(currentValue), initialValue);
+    return sumArray;
+}
+
+console.log("exo16", sumNumbers(numberStrings));
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 17
@@ -221,6 +355,17 @@
 // console.log(monTableauConcat) // ["Hello", "World", "Test", "Salut"]
 
 // CODE ICI
+
+
+const holaStrings = ["Hola", "Chicos"];
+const BienvenidosStrings = ["Bienvenidos", "Leo Pessi"];
+
+const concatArray = (...arrays) => {
+    const concatThisBruv = arrays.reduce((accumulator, currentArray) => accumulator.concat(currentArray), []);
+    return concatThisBruv;
+}
+
+console.log("exo17", concatArray(holaStrings, BienvenidosStrings));
 
 //----------------------------------------------------------------------------------------------//
 
