@@ -377,6 +377,20 @@ console.log("exo17", concatArray(holaStrings, BienvenidosStrings));
 
 // CODE ICI
 
+const futbalString = ["Cristiano", "Messi", "Xavi", "Iniesta"];
+
+const futbalFilter = (array) => {
+    const stringIncludeE = array.filter(function(string) {
+        return string.includes('e');
+    });
+    return stringIncludeE;
+}
+
+
+console.log("exo18", futbalFilter(futbalString).join(', '));
+
+
+
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 19
@@ -387,6 +401,14 @@ console.log("exo17", concatArray(holaStrings, BienvenidosStrings));
 
 // CODE ICI
 
+const arrayNumber = [ 2, 10, 9, 6, 5, 8];
+
+const filterArrayNumber = (array) => {
+    const stepOne = array.filter(number => number % 2 === 0);
+    const stepTwo = stepOne.sort(function(a, b){return a-b});
+    return stepTwo;
+}
+console.log('exo19', filterArrayNumber(arrayNumber))
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 20
@@ -419,7 +441,7 @@ console.log("exo17", concatArray(holaStrings, BienvenidosStrings));
 
 // CODE ICI
 
-
+console.log('exo20 PAS FAIT')
 
 
 
@@ -460,7 +482,7 @@ console.log("exo17", concatArray(holaStrings, BienvenidosStrings));
 
 // CODE ICI
 
-
+console.log('exo21 PAS FAIT')
 
 
 
@@ -504,7 +526,7 @@ console.log("exo17", concatArray(holaStrings, BienvenidosStrings));
 
 
 
-
+console.log('exo22 PAS FAIT')
 
 
 
@@ -548,7 +570,7 @@ console.log("exo17", concatArray(holaStrings, BienvenidosStrings));
 // CODE ICI
 
 
-
+console.log('exo23 PAS FAIT')
 
 
 //----------------------------------------------------------------------------------------------//
@@ -585,7 +607,7 @@ console.log("exo17", concatArray(holaStrings, BienvenidosStrings));
 // CODE ICI
 
 
-
+console.log('exo24 PAS FAIT')
 
 
 
@@ -624,6 +646,24 @@ console.log("exo17", concatArray(holaStrings, BienvenidosStrings));
 // CODE ICI
 
 
+
+const mixStrings = ["Hola","Hello", "Puyol","pelé", "Nani"];
+
+const sortedStrings = mixStrings.sort((a, b) => {
+  const firstCharA = a.toUpperCase();
+  const firstCharB = b.toUpperCase();
+
+  if (firstCharA < firstCharB) {
+    return -1;
+  } else if (firstCharA > firstCharB) {
+    return 1;
+  } else {
+    // If the first characters are the same, maintain the original order
+    return 0;
+  }
+});
+
+console.log('exo25', sortedStrings);
 
 
 
