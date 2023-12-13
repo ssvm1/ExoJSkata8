@@ -29,11 +29,11 @@ const sumEx1 = (a, b) => {
 
 // CODE ICI
 
-let monTableau = [1, 2, 3]
+let thisArray = [1, 2, 3]
 
 let firstArray = (array) => array[0];
 
-console.log("Exo2",firstArray(monTableau));
+console.log("Exo2",firstArray(thisArray));
 
 
 //----------------------------------------------------------------------------------------------//
@@ -49,9 +49,9 @@ console.log("Exo2",firstArray(monTableau));
 // CODE ICI
 
 let popArray = (array) => array.pop();
-let popTableau = popArray(monTableau);
+let popTableau = popArray(thisArray);
 
-console.log("Exo3",monTableau);
+console.log("Exo3",thisArray);
  
 
 //----------------------------------------------------------------------------------------------//
@@ -69,8 +69,8 @@ console.log("Exo3",monTableau);
 
 let sumTableau = 0;
 
-for (let i = 0; i < monTableau.length; i++) {
-    sumTableau += monTableau[i];
+for (let i = 0; i < thisArray.length; i++) {
+    sumTableau += thisArray[i];
 }
 
 console.log("Exo4",sumTableau)
@@ -437,17 +437,21 @@ console.log('exo19', filterArrayNumber(arrayNumber))
 
 
 
-
-
 // CODE ICI
 
-console.log('exo20 PAS FAIT')
-
-
-
-
-
-
+const findShort = (string) => {
+  const monArray = string.split(" ");
+     const arrayLength = monArray.map((element) => {
+         return element.length
+         }
+     )
+     let arraySort = arrayLength.sort((a, b) => {
+         return a - b
+     }
+     )   
+     return arraySort[0]
+    }
+console.log("exo20", findShort("5 10 200 300"))
 
 //----------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------//
@@ -475,14 +479,29 @@ console.log('exo20 PAS FAIT')
 
 // EXERCICE 21 
 
- //Écrivez une fonction `anagram` qui prend deux chaînes et renvoie un booléen indiquant si les chaînes sont des anagrammes l'une de l'autre. Deux chaînes sont des anagrammes l'une de l'autre si elles contiennent les caractères, quel que soit l'ordre des caractères. Par exemple, "listen" et "silent" sont des anagrammes l'une de l'autre
+ //Écrivez une fonction `anagram` qui prend deux chaînes et renvoie un booléen indiquant si les chaînes sont des anagrammes l'une de l'autre. 
+ //Deux chaînes sont des anagrammes l'une de l'autre si elles contiennent les caractères, quel que soit l'ordre des caractères.
+ //Par exemple, "listen" et "silent" sont des anagrammes l'une de l'autre
 
- // Indice : Oubliez pas de transformer les string en tableau pour pouvoir les trier et les comparer. Utilisez la méthode split() pour transformer une string en tableau et la méthode sort() pour trier un tableau. Puis comparez les deux tableaux avec la méthode join() qui permet de transformer un tableau en string.
+ // Indice : Oubliez pas de transformer les string en tableau pour pouvoir les trier et les comparer. 
+ //Utilisez la méthode split() pour transformer une string en tableau et la méthode sort() pour trier un tableau. Puis comparez les deux tableaux avec la méthode join() qui permet de transformer un tableau en string.
 
 
 // CODE ICI
 
-console.log('exo21 PAS FAIT')
+
+const anagram = (string1, string2) => {
+    const anagram1 = string1.split('').sort()
+    const anagram2 = string2.split('').sort()
+    if (anagram1.join('') === anagram2.join('')) {
+        return true
+    }
+    else {
+         return false
+    }
+}
+console.log("exo21", anagram("listen", "silent"))
+
 
 
 
