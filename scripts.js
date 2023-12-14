@@ -543,9 +543,33 @@ console.log("exo21", anagram("listen", "silent"))
 
 // CODE ICI
 
+const baseString = "google"
+
+const removeDoubleLetters = (elem) => {
+    const splitString = elem.split('')
+
+    function checkLetter(string) {
+        for (let i = 0; i < string.length - 1; i++) { 
+            const currentLetter = string[i]
+            const nextLetter = string[i + 1]
+
+            if (currentLetter === nextLetter) {
+        string.splice(i + 1, 1);
+      }
+    }
+    return string;
+  }
+
+  return checkLetter(splitString);
+};
+
+console.log("exo22", removeDoubleLetters(baseString).join(''));
 
 
-console.log('exo22 PAS FAIT')
+
+
+
+
 
 
 
@@ -588,8 +612,18 @@ console.log('exo22 PAS FAIT')
 
 // CODE ICI
 
+const sample = [0,6,3,4,5,6,7,8,9,0]
 
-console.log('exo23 PAS FAIT')
+const createPhoneNumber = (array) => {
+    const sliceSample1 = array.slice(0, 2)
+    const sliceSample2 = array.slice(2, 4)
+    const sliceSample3 = array.slice(4, 6)
+    const sliceSample4 = array.slice(6, 8)
+    const sliceSample5 = array.slice(8, 10)
+    return `${sliceSample1.join("")} ${sliceSample2.join("")} ${sliceSample3.join("")} ${sliceSample3.join("")} ${sliceSample4.join("")} ${sliceSample5.join("")}`
+}
+
+console.log('exo23', createPhoneNumber(sample))
 
 
 //----------------------------------------------------------------------------------------------//
